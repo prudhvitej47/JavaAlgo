@@ -81,7 +81,7 @@ public class DataStructures {
         System.out.println();
 
         // HashMap but in a sorted order
-        // A Red-Black tree based navigation and sorting
+        // TreeMap uses a Red-Black tree based navigation and sorting
         // Red-Black tree is a binary search tree in which every node is colored with either red or black.
         // It is a type of self-balancing binary search tree.
         Map<String, String> treeMap = new TreeMap<>();
@@ -104,6 +104,36 @@ public class DataStructures {
 
         AdjListNode minDistanceNode = pq.poll();
         System.out.println(minDistanceNode.vertex + " " + minDistanceNode.minDistance);
+
+        List<List<Integer>> snap = new ArrayList<>();
+        snap.add(List.of(1,2,4));
+        snap.add(List.of(1,2,3,6));
+        snap.add(List.of(1,2,3,6,7,9));
+        snap.add(List.of(1,2,3,6,8,9));
+
+        System.out.println(Collections.binarySearch(snap.get(3), 5));
+
+        List<Integer> temp = new ArrayList<>(List.of(1, 2, 3, 4));
+        System.out.println(List.copyOf(temp));
+
+        int[] arrx = new int[]{1,2,3,4,5};
+        int[] tempArrx = arrx.clone();
+
+        Random rand = new Random();
+        for (int i = tempArrx.length - 1; i >= 0; i--) {
+            int j = rand.nextInt(i + 1);
+            int swap = tempArrx[i];
+            tempArrx[i] = tempArrx[j];
+            tempArrx[j] = swap;
+        }
+
+        System.out.println(Arrays.toString(arrx));
+        System.out.println(Arrays.toString(tempArrx));
+
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "String");
+        map.put(1, "Hello");
+        System.out.println(map.get(1));
     }
 
     static class CustomComparator implements Comparator<Integer> {

@@ -183,6 +183,10 @@ public class JavaStreamsTut {
                         .findFirst()
                         .get()
         );
+
+        int[] arrx = new int[]{0, 2, 3, 4};
+        int n = arrx.length;
+        System.out.println(((n*(n+1))/2) - Arrays.stream(arrx).sum());
     }
 
     static boolean isPrime(int num) {
